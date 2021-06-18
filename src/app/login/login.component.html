@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 shadow p-3 mb-5 bg-white rounded">
+
+
+            <div class="d-flex justify-content-center">
+                <img class="my-3 " src="../../assets/logo.png" alt="" width="72" height="57">
+            </div>
+
+            <h1 class="text-center text-black-50">Please Signin</h1>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email"
+                    [(ngModel)]="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" disabled>
+            </div>
+            <button class="btn btn-primary w-100" (click)="login()">Signin</button>
+
+        </div>
+    </div>
+</div>
