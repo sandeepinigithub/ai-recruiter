@@ -1,0 +1,15 @@
+.banner-text{
+    font-size: 32px;
+    font-weight: bold;
+    animation: focus ease 1s infinite;
+
+}
+
+@keyframes focus {
+    0% {
+      font-size: 40px;
+    }
+    100% {
+      font-size: 50px;
+    }
+  }
