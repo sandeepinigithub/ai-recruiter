@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  login() {
+  login() { 
     this.loginService.loginCredential({"email" : this.email}).subscribe(data=>{
       // console.log(data);
       this.d =data ;
@@ -25,7 +25,10 @@ export class LoginComponent implements OnInit {
       else{
         if(this.d.data.id != null){
           // console.log("not null");
-          this.route.navigate(['home']);                  
+          sessionStorage.setItem("sLoginData" , JSON.stringify(data));
+          this.route.navigate(['home']);  
+            
+                       
         }
       }
       

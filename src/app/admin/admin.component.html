@@ -1,2 +1,9 @@
 <app-header></app-header>
-<p>admin works!</p>
+<div class="container justify-content-center align-items-center flex-column">
+    <div class="mb-4 mt-2">
+        <h5>Select HR from the list : </h5>
+        <select class="form-select" aria-label="Select HR" [(ngModel)] = "selectedEmail">
+            <option *ngFor = "let email of emails " [ngValue]="email">{{email}}</option>
+        </select>
+    </div>
+</div>

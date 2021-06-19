@@ -6,10 +6,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LoginService {
+  
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+  }
 
   loginCredential(loginData:any){
     return this.http.post('https://ai-recruiter.herokuapp.com/api/company/login',loginData);
   }
+  
 }
