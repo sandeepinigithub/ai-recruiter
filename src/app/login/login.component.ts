@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
 
@@ -8,33 +8,38 @@ import { LoginService } from '../services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email : string;
-  d:any;
+  email: string;
+  d: any;
+  isLog: any;
 
-  constructor(private loginService: LoginService , private route :Router) { }
+  constructor(private loginService: LoginService, private route: Router, private loginAuth: LoginService) { }
 
-  ngOnInit(): void {
-  }
-  login() { 
-    this.loginService.loginCredential({"email" : this.email}).subscribe(data=>{
+  ngOnInit(): void { }
+  login() {
+    this.loginService.loginCredential({ "email": this.email }).subscribe(data => {
       // console.log(data);
-      this.d =data ;
-      if(this.d.message == "Wrong email or password"){
+      this.d = data;
+      if (this.d.message == "Wrong email or password") {
         alert(this.d.message);
       }
-      else{
-        if(this.d.data.id != null){
+      else {
+        if (this.d.data.id != null) {
           // console.log("not null");
-          sessionStorage.setItem("sLoginData" , JSON.stringify(data));
-          this.route.navigate(['home']);  
-            
-                       
+          this.loginAuth.setLogin();
+
+          sessionStorage.setItem("sLoginData", JSON.stringify(data));
+
+          if (this.loginAuth.isLoggedIn) {
+            this.route.navigate(['/home']);
+          }
+
+
         }
       }
-      
-      
+
+
     })
-    
+
   }
 
 }

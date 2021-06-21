@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
+import { AuthGuard } from './gaurds/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  {path : 'home' , component:HomeComponent} ,
-  {path : 'admin' , component:AdminComponent},
-  {path : 'jobs' , component:JobsComponent},
-  {path : 'job-details' , component:JobsComponent},
+  {path : 'home' , component:HomeComponent , canActivate : [AuthGuard]} ,
+  {path : 'admin' , component:AdminComponent , canActivate : [AuthGuard]},
+  {path : 'jobs' , component:JobsComponent , canActivate : [AuthGuard]},
+  {path : 'job-details' , component:JobsComponent , canActivate : [AuthGuard]},
   {path : '**' , component:LoginComponent}
 ];
 

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobsComponent implements OnInit {
 
-  jobView: any;
+  jobView: any = [];
   jobTemp: any;
   jobs: any;
   searchField : any ;

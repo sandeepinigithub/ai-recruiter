@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LoginService {
+  isLoggedIn = false;
   
 
   constructor(private http: HttpClient) { 
@@ -13,6 +14,19 @@ export class LoginService {
 
   loginCredential(loginData:any){
     return this.http.post('https://ai-recruiter.herokuapp.com/api/company/login',loginData);
+  }
+
+
+  setLogin() {
+    this.isLoggedIn = true;
+  }
+
+  setLogout() {
+    this.isLoggedIn = false;
+  }
+
+  getLogin() {
+    return this.isLoggedIn;
   }
   
 }
