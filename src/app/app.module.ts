@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { JobFilterPipe } from './pipes/job-filter.pipe';
+import { VisualizeComponent } from './visualize/visualize.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 
 @NgModule({
@@ -23,12 +25,14 @@ import { JobFilterPipe } from './pipes/job-filter.pipe';
     AdminComponent,
     JobsComponent,
     JobFilterPipe,
+    VisualizeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgApexchartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

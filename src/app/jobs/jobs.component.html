@@ -43,10 +43,11 @@
     <ng-container>
         <div class="modal fade" tabindex="-1" id="viewJob" data-bs-backdrop="static" data-bs-keyboard="false"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-dialog modal-dialog-scrollable" style="max-width: 80%;">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Job Details</h5>
+                        <button class="btn btn-primary mx-3" data-bs-dismiss="modal" aria-label="Close" (click)=visualize(jobView.id) routerLink="/visualize">Click for analysis</button>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">

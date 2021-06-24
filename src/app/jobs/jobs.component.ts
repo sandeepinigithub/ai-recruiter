@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VisualizeService } from '../services/visualize.service';
 
 @Component({
   selector: 'app-jobs',
@@ -12,7 +13,7 @@ export class JobsComponent implements OnInit {
   jobs: any;
   searchField : any ;
 
-  constructor() {
+  constructor(private jobVisualize : VisualizeService) {
     this.jobTemp = sessionStorage.getItem('jobs');
     this.jobs = JSON.parse(this.jobTemp).data.jobs;
 
@@ -22,6 +23,12 @@ export class JobsComponent implements OnInit {
   }
   view(data:any){
     this.jobView = data ;
+  }
+  visualize(id:string){ 
+    this.jobVisualize.visualization(id).subscribe(data=>{
+      // console.log(data);      
+      sessionStorage.setItem("visualizeData", JSON.stringify(data));      
+    });        
   }
 
 }
