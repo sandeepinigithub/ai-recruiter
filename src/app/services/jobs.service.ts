@@ -10,4 +10,7 @@ export class JobsService {
   getJobs(bodyData:any){
     return this.http.post('https://ai-recruiter.herokuapp.com/api/job/filter',bodyData);
   }
+  postJobs(bodyData:any){
+    return this.http.post('https://ai-recruiter.herokuapp.com/api/job/index/',bodyData);
+  }
 }
