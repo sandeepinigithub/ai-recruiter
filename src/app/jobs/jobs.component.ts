@@ -11,10 +11,10 @@ export class JobsComponent implements OnInit {
 
   jobView: any = [];
   jobTemp: any;
-  jobs: any;
-  searchField : any ;
+  jobs: any=[];
+  searchField : string ;
   tempEmail : any;
-  emails : any ;
+  emails : any =[];
 
   postJobData = {
     hr_email : '',
@@ -40,6 +40,7 @@ export class JobsComponent implements OnInit {
   }
   view(data:any){
     this.jobView = data ;
+    this.visualize(data.id);
   }
 
   post(){
