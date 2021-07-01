@@ -41,6 +41,7 @@ export class JobsComponent implements OnInit {
   view(data:any){
     this.jobView = data ;
     this.visualize(data.id);
+    
   }
 
   post(){
