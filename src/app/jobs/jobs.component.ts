@@ -20,9 +20,15 @@ export class JobsComponent implements OnInit {
     hr_email : '',
     profile : '',
     description : '',
-    qualifications : [] ,
-    skills : [],
-    eligibility : {},
+    qualifications : [''] ,
+    skills : [''],
+    eligibility : {
+      percentage_10th : '',
+      percentage_12th : '',
+      graduation_percentage : '',
+      active_backlogs : '',
+      
+    },
 
   }
 
@@ -45,7 +51,9 @@ export class JobsComponent implements OnInit {
   }
 
   post(){
-    // this.jobService.postJobs(this.postJobData);    
+    this.jobService.postJobs(this.postJobData);   
+    console.log(this.postJobData);
+     
   }
 
   visualize(id:string){ 

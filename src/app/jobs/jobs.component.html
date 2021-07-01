@@ -116,11 +116,11 @@
               </p>
               <p class="fs-5 text-danger">
                 10th Percentage: 
-                <span class="text-dark">{{ jobView.eligibility['10th_percentage'] }}</span>
+                <span class="text-dark">{{ jobView.eligibility['percentage_10th'] }}</span>
               </p>
               <p class="fs-5 text-danger">
                 12th Percentage:
-                <span class="text-dark">{{ jobView.eligibility['12th_percentage'] }}</span>
+                <span class="text-dark">{{ jobView.eligibility['percentage_12th'] }}</span>
               </p>
               <p class="fs-5 text-danger">
                 Graduation Percentage:
@@ -192,7 +192,67 @@
                   id="qualifications"
                   placeholder="Qualifications"
                   required
-                  [(ngModel)]="postJobData.qualifications"
+                  [(ngModel)]="postJobData.qualifications[0]"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="skills" class="form-label">Skills : </label>
+                <input
+                  type="text"
+                  name="skills"
+                  class="form-control"
+                  id="skills"
+                  placeholder="Skills"
+                  required
+                  [(ngModel)]="postJobData.skills[0]"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="percentage_10th" class="form-label">Class 10 Percentage : </label>
+                <input
+                  type="text"
+                  name="percentage_10th"
+                  class="form-control"
+                  id="percentage_10th"
+                  placeholder="percentage_10th"
+                  required
+                  [(ngModel)]="postJobData.eligibility.percentage_10th"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="percentage_12th" class="form-label">Class 12 Percentage : </label>
+                <input
+                  type="text"
+                  name="percentage_12th"
+                  class="form-control"
+                  id="percentage_10th"
+                  placeholder="percentage_12th"
+                  required
+                  [(ngModel)]="postJobData.eligibility.percentage_12th"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="graduation_percentage" class="form-label">Graduation Percentage : </label>
+                <input
+                  type="text"
+                  name="graduation_percentage"
+                  class="form-control"
+                  id="graduation_percentage"
+                  placeholder="graduation_percentage"
+                  required
+                  [(ngModel)]="postJobData.eligibility.graduation_percentage"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="active_backlogs" class="form-label">Active Backlogs : </label>
+                <input
+                  type="text"
+                  name="active_backlogs"
+                  class="form-control"
+                  id="active_backlogs"
+                  placeholder="active_backlogs"
+                  required
+                  [(ngModel)]="postJobData.eligibility.active_backlogs"
                 />
               </div>
             </form>
